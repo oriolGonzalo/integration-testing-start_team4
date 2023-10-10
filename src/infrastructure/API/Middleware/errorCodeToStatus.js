@@ -1,4 +1,4 @@
-import { ErrorCode } from "../../domain/errors/ErrorCode.js"
+import { ErrorCode } from "../../../domain/errors/ErrorCode.js"
 
 const errorCodeToStatusMap = {
   [ErrorCode.INVALID_PARAMS]: 400,
