@@ -11,17 +11,24 @@ export class EmailSenderMailgun extends EmailSender {
     this.domain = domain
     this.authUser = authUser
     this.apiKey = apiKey
+    console.log(this.apiKey)
+    console.log(this.domain)
+    console.log(this.authUser)
   }
 
   async sendWelcomeEmail(user) {
     const body = new FormData()
     const domain = this.domain
 
-    body.append("from", `Daniel Ramos <mailgun@${domain}>`)
+    body.append("from", `Pepe Juan <mailgun@${domain}>`)
     body.append("to", user.email.email)
     body.append("subject", "Hello")
     body.append("template", "welcome")
     body.append("t:variables", JSON.stringify({ name: user.name }))
+
+    console.log("------0-------")
+
+    console.log(body)
 
     const response = await fetch(`https://api.mailgun.net/v3/${domain}/messages`, {
       method: "POST",

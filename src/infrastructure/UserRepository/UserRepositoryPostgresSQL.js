@@ -38,6 +38,7 @@ export class UserRepositoryPostgresSQL extends UserRepository {
   }
 
   async connect() {
+    console.log("client -----> ", this.client)
     await this.client.connect()
   }
 
